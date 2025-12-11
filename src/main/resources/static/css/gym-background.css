@@ -1,0 +1,142 @@
+body.gym-background {
+    /* Исправлено расширение на .jpg и путь на выход из папки css */
+    background: url('../assets/gym-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.gym-login-container {
+    width: 360px;
+    padding: 40px 30px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease-out;
+    animation: pulse 2s infinite alternate;
+    z-index: 10;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.gym-login-container.show {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    /* ИСПРАВЛЕНИЕ: padding больше не добавляется к 100% ширины */
+    box-sizing: border-box;
+    padding: 14px 15px 14px 45px;
+    background: #1a1a1a;
+    color: #ddd;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #777;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff9900;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #ff0000, #cc0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-login:hover {
+    background: #b30000;
+    transform: translateY(-2px);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.links a {
+    color: #4da6ff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #66b3ff;
+}
+
+.footer-icon {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+@media (max-width: 480px) {
+    .gym-login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+}
